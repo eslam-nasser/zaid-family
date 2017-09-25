@@ -1,0 +1,456 @@
+/*====================================
+  Colors Vars
+$color_red     : #ff7473
+$color_yellow  : #ffc952
+$color_blue    : #47b8e0
+$color_dark    : #34314c
+
+
+/*====================================
+  Imports
+// Heading Font
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskufiarabic.css)
+// Main Font
+@import url(http://fonts.googleapis.com/earlyaccess/droidarabickufi.css)
+// Salma Font
+@import 'imports/sultan-font.sass'
+
+//==> Import Pages
+@import 'imports/tree.sass'
+@import 'imports/map.sass'
+@import 'imports/gallary.sass'
+@import 'imports/single-gallary.sass'
+@import 'imports/add-person.sass'
+@import 'imports/contact.sass'
+@import 'imports/main-news.sass'
+@import 'imports/single-news.sass'
+
+/*====================================
+  General
+body
+  overflow-x: hidden
+  font-family: 'Noto Sans Kufi Arabic', sans-serif
+  background: url('../img/texture/3.png') 50% 50%
+  transition: .3s
+
+.heading
+  text-align: center
+  position: relative
+  color: $color_dark
+  margin-bottom: 2em
+  font-size: 24px
+  &:after
+    content: ''
+    position: absolute
+    bottom: -50%
+    left: 50%
+    margin-left: -20px
+    width: 40px
+    height: 1px
+    background: $color_dark
+
+
+.hr-location
+  border-top: 1px solid #DADADA
+
+
+.page-panner
+  position: relative
+  width: 920px
+  text-align: center
+  color: #FFF
+  background: url("../img/bg/1.jpg")
+  background-position: center center
+  background-repeat: no-repeat
+  background-size: cover
+  padding: 1em 0px
+  margin-right: -20px
+  margin-bottom: 30px
+  border-radius: 5px 5px 0 0
+  .d-layer
+    position: absolute
+    right: 0
+    left: 0
+    top: 0
+    bottom: 0
+    background: rgba(9, 9, 9 , .7)
+    border-radius: 5px 5px 0 0
+  .text
+    position: relative
+    h3
+      font-size: 20px
+      font-style: italic
+      color: #DDD
+
+
+.zaid
+  font-family: 'arabic', sans-serif
+  font-size: 3em
+
+/*====================================
+  Header
+header
+  padding: 0
+  margin: 0
+  position: absolute
+  top: 0
+  right: 0
+  left: 0
+  background: #FFF
+  z-index: 2
+  border-bottom: 1px solid #D4D4D4
+  border-top: 1px solid #D4D4D4
+  max-height: 90px
+  overflow: hidden
+  &:after,&:before
+    content: ''
+    display: table
+  &:after
+    clear: both
+  .logo
+    float: left
+    width: 14%
+    margin-left: 10px
+    img
+      width: 100%
+      padding: 5px
+  ul, li
+    padding: 0
+    margin: 0
+  ul
+    float: right
+    margin-right: 20px
+    list-style-type: none
+    a
+      color: inherit
+      text-decoration: none
+      &:hover, &:active
+        text-decoration: none
+
+    li
+      padding: 15px 20px
+      text-align: center
+      text-transform: uppercase
+      float: left
+      transition: .3s
+      font-family: 'Droid Arabic Kufi', sans-serif
+      font-size: 12px
+      &.active, &:hover
+        background: $color_blue
+        color: #FFF
+      i
+        display: block
+        font-size: 30px
+
+
+// Icon Fix
+.flibed
+  transform: rotate(180deg)
+
+/*====================================
+  Section Hero
+#hero
+  height: 100vh
+  background: url('../img/bg/3.jpg')
+  background-position: 50% 0
+  background-size: cover
+  background-attachment: fixed
+  z-index: 0
+  > .d-layer
+    position: absolute
+    right: 0
+    left: 0
+    top: 0
+    bottom: 0
+    background: rgba(9, 9, 9 ,.5)
+    z-index: 1
+  .texts
+    color: #FFF
+    text-align: center
+    margin-bottom: 5em
+    padding: 0px 10px
+  .content
+    z-index: 1
+    position: relative
+    padding-top: 22%
+    .buttons
+      text-align: center
+      padding-top: 7em
+      a.btn-hero
+        padding: 10px 15px
+        margin: 0
+        border: none
+        outline: 0
+        background-color: $color_blue
+        color: #FFF
+        font-size: 18px
+        font-weight: 100
+        border-radius: 2px
+        &:hover,&:active
+          text-decoration: none
+          background-color: $color_blue /.9
+  .startScroll
+    position: absolute
+    bottom: 0
+    right: 0
+    left: 0
+    color: #FFF
+    font-family: arial
+    text-align: center
+    display: block
+    height: 100px
+    z-index: 2
+    .icon-scroll,
+    .icon-scroll:before
+      position: absolute
+      left: 50%
+
+    .icon-scroll
+      width: 25px
+      height: 50px
+      margin-left: -15px
+      top: 60%
+      margin-top: -20px
+      box-shadow: inset 0 0 0 1px #b9b3b3
+      border-radius: 25px
+      transition: .3s
+      cursor: pointer
+      &:hover
+        box-shadow: inset 0 0 0 1px #FFF
+        &:after
+          background: #FFF
+
+    .icon-scroll:before
+      content: ''
+      width: 3px
+      height: 3px
+      background: #b9b3b3
+      transition: .3s
+      margin-left: -1px
+      top: 8px
+      border-radius: 4px
+      animation-duration: 1.5s
+      animation-iteration-count: infinite
+      animation-name: scroll
+
+    @keyframes scroll
+      0%
+        opacity: 1
+      100%
+        opacity: 0
+        transform: translateY(25px)
+/*====================================
+
+
+.news-feed
+  background: #FFF
+  box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.3)
+  max-width: 920px
+  margin: auto
+  margin-top: 1em
+  padding: 1px 20px
+  margin-bottom: 1em
+  border-radius: 5px
+  position: relative
+  .news-item
+    a
+      color: #888
+      &:hover
+        text-decoration: underline
+  .ticker-wrapper.has-js,.ticker,.ticker-content,.ticker-swipe
+    background: transparent
+    border-radius: 0
+    border: none
+    width: 100%
+    color: $color_dark
+  .ticker-title
+    color: $color_red
+    background: transparent
+    border-radius: 0
+    border: none
+    font-size: 16px
+    padding-top: 2px
+
+
+.content-warpper
+  background: #FFF
+  box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.3)
+  max-width: 920px
+  margin: auto
+  margin-top: 1em
+  padding: 10px 20px
+  padding-bottom: 1em
+  margin-bottom: 1em
+  border-radius: 5px
+  position: relative
+#services
+  .one-serv
+    text-align: center
+    width: 31.333333%
+    margin: 1%
+    border: 1px solid rgba(153, 153, 153, .5)
+    padding: 20px 10px
+    border-radius: 4px
+    min-height: 300px
+    transition: .4s
+    i
+      font-size: 3em
+      transition: .3s
+      display: block
+      color: #666
+      position: relative
+      top: 0
+      background: #FFF
+      width: 80px
+      margin: auto
+    h4
+      margin: 1em auto
+      margin-bottom: .5em
+    h5
+      margin-top: 2em
+      line-height: 24px
+    &:hover
+      border: 1px solid $color_blue
+      i
+        color: $color_blue
+        transition: .3s
+        position: relative
+        top: -55px
+        background: #FFF
+        width: 80px
+        margin: auto
+
+
+
+/*====================================
+  Locations
+#locations
+  margin-top: 6em
+  .one-location
+    width: 100%
+    position: relative
+    height: 200px
+    .col-xs-4
+      padding: 0
+      img
+        width: 70%
+        margin: auto
+        display: block
+        padding: 5px
+        border: 1px solid #eee
+        transition: .25s
+        border-radius: 4px
+    .col-xs-8
+      padding: 0
+      height: 100%
+      h4
+        color: $color_dark
+        margin-bottom: .5em
+        font-size: 25px
+
+      p
+        color: #666
+      .btn-location
+        padding: 10px 20px
+        background: $color_blue
+        color: #FFF
+        position: absolute
+        right: 1em
+        bottom: 5px
+        &:hover
+          text-decoration: none
+          background: $color_blue / .9
+    &:hover
+      img
+        border: 1px solid $color_blue
+  .one-location:nth-child(4n)
+    text-align: right
+    .btn-location
+      padding: 10px 20px
+      background: $color_blue
+      color: #FFF
+      position: absolute
+      left: 1em
+      bottom: 5px
+      right: auto
+
+
+/*====================================
+  Call To Action
+#cta
+  height: 400px
+  width: 920px
+  background: url('../img/bg/2.jpg')
+  background-size: cover
+  margin-top: 6em
+  margin-right: -20px
+  position: relative
+  padding: 10px 50px
+  .d-layer
+    position: absolute
+    right: 0
+    left: 0
+    top: 0
+    bottom: 0
+    background: rgba(9, 9, 9 , .35)
+    z-index: 1
+  .content
+    color: #FFF
+    text-align: center
+    padding-top: 10%
+    position: relative
+    z-index: 2
+    h2
+      margin: .8em auto
+    p.lead
+      font-size: 14px
+      line-height: 24px
+
+  .buttons
+    .btn-cta
+      width: 200px
+      padding: 10px 20px
+      background: $color_blue
+      margin: 2em auto
+      color: #FFF
+      position: relative
+      display: block
+      z-index: 2
+      text-align: center
+
+      &:hover
+        text-decoration: none
+        background: $color_blue / .95
+
+
+/*====================================
+  Footer
+footer
+  max-width: 920px
+  background: #fff
+  border-radius: 5px 5px 0 0
+  box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.3)
+  padding: 10px
+  margin: auto
+  margin-top: 1.5em
+  img
+    width: 50px
+  p
+    margin-top: 1em
+    i
+      color: red
+
+/*====================================
+  Back To Top
+#backToTop
+  position: fixed
+  left: 0
+  bottom: -100%
+  background: $color_blue
+  padding: 15px
+  color: #FFF
+  font-size: 17px
+  cursor: pointer
+  transition: 1s
+  &:hover
+    background: $color_blue / .95
